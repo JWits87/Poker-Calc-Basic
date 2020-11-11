@@ -9,3 +9,8 @@ bluffSize = Math.floor(bluffSize);
 breakEvenBluffSuccess = (bluffSize / (potSize + bluffSize));
 
 console.log("Pot Size: " + potSize + "  Bluff Size: " + bluffSize + "  BreakEven Bluff Success: " + breakEvenBluffSuccess);
+
+// Load HTML Values
+let form = document.getElementById("equityForm");
+form.potSize.value = potSize;
+form.betSize.value = bluffSize;
