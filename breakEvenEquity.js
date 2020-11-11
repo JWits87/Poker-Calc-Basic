@@ -14,3 +14,9 @@ console.log("Pot Size: " + potSize + "  Bluff Size: " + bluffSize + "  BreakEven
 let form = document.getElementById("equityForm");
 form.potSize.value = potSize;
 form.betSize.value = bluffSize;
+
+function checkForm() {
+  let answer = form.breakEvenSuccess.value;
+  let difference = 1 - (answer / breakEvenBluffSuccess);
+  alert("Answer was off by " + Math.floor(difference*100) + " percent");
+}
