@@ -11,7 +11,7 @@ betSuccess.addEventListener("keyup", function(e) {
 });
 function resetForm() {
   pot = Math.random();
-  pot = Math.floor(pot * 100)
+  pot = Math.floor(pot * 100);
   alpha = Math.random();
   bet = pot * alpha;
   bet = Math.floor(bet);
@@ -31,14 +31,16 @@ function resetForm() {
 resetForm();
 function checkForm() {
   let answer = intToFrequency(document.getElementById("betSuccess").value);
-  let difference = 1 - (answer / alpha);
-  console.log("Answer was off by " + Math.floor(difference*100) + " percent");
+  let accuracy = Math.abs((1 - alpha)/answer);
+  console.log("You answered" + answer);
+  console.log("You were off by" + accuracy)
   console.log("Actual Required Bet Success: " + alpha);
+
   resetForm();
 }
 
 function intToFrequency(number) {
-  let zeroString = "0."
+  let zeroString = "0.";
   let numberString = number.toString();
   let frequencyString = zeroString + numberString;
   let frequency = frequencyString.valueOf();
