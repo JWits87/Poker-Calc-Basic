@@ -31,18 +31,25 @@ function resetForm() {
 resetForm();
 function checkForm() {
   let answer = intToFrequency(document.getElementById("betSuccess").value);
-  let accuracy = Math.abs((1 - alpha)/answer);
-  console.log("You answered" + answer);
-  console.log("You were off by" + accuracy)
+  function accuracy(answer, alpha) {
+    let offby;
+    if (answer >= alpha) {
+      accuracy = Math.abs((answer - alpha)/alpha);
+    }
+    else if (alpha >= answer) {
+      accuracy = Math.abs((alpha - answer)/alpha);
+    }
+    return offby;
+  }
+  console.log("You answered " + answer);
+  console.log("You were off by" + accuracy(answer, alpha))
   console.log("Actual Required Bet Success: " + alpha);
 
   resetForm();
 }
 
 function intToFrequency(number) {
-  let zeroString = "0.";
   let numberString = number.toString();
-  let frequencyString = zeroString + numberString;
-  let frequency = frequencyString.valueOf();
+  let frequencyString = ("0." + numberString).valueOf();
   return frequency;
 }
