@@ -1,0 +1,52 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.parsed-range {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+#rangeGrid {
+    margin-top: 20px;
+    /* Additional styling for the grid */
+}
+
+.poker-grid {
+    display: grid;
+    grid-template-columns: repeat(13, 30px); /* 13 columns for each card rank */
+    grid-template-rows: repeat(13, 30px); /* 13 rows for each card rank */
+    gap: 5px;
+    justify-items: center;
+    align-items: center;
+    place-self: center;
+    width:fit-content;
+    margin: auto;
+}
+
+.poker-grid div {
+    width: 100%;
+    height: 100%;
+    background-color: #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    place-self: center;
+}
