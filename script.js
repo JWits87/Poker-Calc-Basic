@@ -142,10 +142,7 @@ function displayParsedRange(parsedRange) {
 
 
 
-
-
-
-document.getElementById('rangeForm').addEventListener('submit', function(event) {
+function update(event) {
     event.preventDefault();
     
     
@@ -170,11 +167,17 @@ document.getElementById('rangeForm').addEventListener('submit', function(event) 
     updateGridWithRange(calculatedRange);
 
     let parsedRange = parseRange(calculatedRange);
+    parsedRange = parsedRange + " (" + (requiredEqualDefenseFrequency * 100).toFixed(3) + "%)";
     displayParsedRange(parsedRange);
 // Display the calculated range
 
 
-});
+}
+
+
+document.getElementById('rangeForm').addEventListener('submit', update);
+
+document.getElementById('rangeForm').addEventListener('change', update);
     function populateGrid() {
         const ranks = ['A', 'K', 'Q', 'J', 'T', '9', '8', '7', '6', '5', '4', '3', '2'];
         const grid = document.getElementById('rangeGrid');
